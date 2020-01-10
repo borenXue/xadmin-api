@@ -1,0 +1,21 @@
+
+typeorm:
+  options:
+    logger: advanced-console
+
+# cache:
+#   memory: false
+#   redis:
+#     max: 51200 # 单位 Kb, 50Mb = (1024 * 50)Kb
+#     ttl: 2592000 # 单位 秒, 0 代表永远有效 (超过 max 时才会被删除) - 30天 = 2592000 = 30*24*60*60
+#     host: localhost
+#     port: 6379
+#     password: 123abc
+#     db: 0
+
+logger:
+  console: true
+
+express:
+  authTokenCookie:
+    httpOnly: false

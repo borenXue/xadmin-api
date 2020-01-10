@@ -1,0 +1,58 @@
+
+port: 10060
+
+# 数据库
+mysql: &mysql
+  host: localhost
+  port: 3306
+  username: uxadmin
+  password: pxadmin
+  database: xadmin
+
+# typeorm 初始化参数
+typeorm:
+  options:
+    type: mysql
+    <<: *mysql
+    name: default
+    logging: 'all' # 类型: boolean | "all" | ("query" | "schema" | "error" | "warn" | "info" | "log" | "migration")[]
+    logger: 'simple-console' # "advanced-console" | "simple-console" | "file" | "debug" | Logger(不支持yml配置)
+    debug: false
+    supportBigNumbers: true
+    bigNumberStrings: false
+    maxQueryExecutionTime: 100
+    charset: 'UTF8_GENERAL_CI'
+    insecureAuth: false
+
+# 数据库表名
+tables:
+  core_right: core_admin_right
+  core_role: core_admin_role
+  core_user: core_admin_user
+  core_ref_user_role: core_admin_refs_user_role
+  core_ref_role_right: core_admin_refs_role_right
+
+cache:
+  memory: # false | { max, ttl }
+    max: 51200 # 单位 Kb, 50Mb = (1024 * 50)Kb
+    ttl: 2592000 # 单位 秒, 0 代表永远有效 (超过 max 时才会被删除) - 30天 = 2592000 = 30*24*60*60
+  # ClientOpts 选项参考: https://github.com/NodeRedis/node_redis#options-object-properties
+  redis: false # false | ClientOpts
+
+logger:
+  console: false
+  aliyun: false
+  file: false # https://www.npmjs.com/package/rotating-file-stream
+
+express:
+  routePrefix: '/'
+  authTokenCookie:
+    key: xadmin-auth-token
+    maxAge: 1800000 # 毫秒为单位 - 1000 * 60 * 30
+  # cors 配置参考: https://github.com/expressjs/cors#configuration-options
+  cors: # express 中间件 cors 配置参数
+    origin:
+      # - !!js/regexp /google\.com$/
+    credentials: true
+    methods: GET,HEAD,PUT,PATCH,POST,DELETE
+

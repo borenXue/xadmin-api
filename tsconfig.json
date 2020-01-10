@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "outDir": "dist",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "types": [],
+    "baseUrl": ".",
+    // 因打包时不会自动转化 所以 paths 基本不可用 TODO: 引入 babel 编译 或 webpack构建 来解决
+    // 可借助 eslint-import-resolver-typescript 与 eslint 自动集成
+    //  https://github.com/dividab/tsconfig-paths 与 nodemon 及pm2 无法集成
+    // "paths": {
+    //   "@/*": [ "src/*" ]
+    // },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "index.d.ts"
+  ],
+  // "exclude": [
+  //   "node_modules"
+  // ]
+}

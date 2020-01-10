@@ -1,0 +1,8 @@
+
+express:
+  authTokenCookie:
+    httpOnly: false
+
+logger:
+  console: true
+  aliyun: true
