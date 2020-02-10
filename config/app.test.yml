@@ -1,0 +1,14 @@
+
+port: 8080
+
+typeorm:
+  options:
+    host: host.docker.internal
+
+express:
+  authTokenCookie:
+    httpOnly: false
+
+logger:
+  console: true
+  aliyun: false

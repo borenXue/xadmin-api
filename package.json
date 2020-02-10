@@ -7,8 +7,11 @@
     "start": "TS_NODE_PROJECT=true && concurrently -p \"[{name}]\" -n 'TSC,RUN' -c 'bgCyan.bold,bgYellow.bold' \"npm run start:tsc\" \"npm run start:node\"",
     "start:tsc": "tsc --watch",
     "start:node": "nodemon -r tsconfig-paths/register dist/index.js",
-    "build:test": "cross-env NODE_ENV=test tsc --outDir dist && cp *.yml dist/ && cp package* dist/",
-    "build:online": "cross-env NODE_ENV=online tsc --outDir dist && cp *.yml dist/ && cp package* dist/",
+    "build:test": "rm -rf dist && tsc --outDir dist && npm run sync-files",
+    "build:online": "rm -rf dist && tsc --outDir dist && npm run sync-files",
+    "deploy:test": "npm run build:test && ./script/test/deploy.sh",
+    "run:test": "cross-env NODE_ENV=test node dist/index.js",
+    "sync-files": "cp -R config dist/config && cp package* dist/",
     "lint": "npm-run-all --parallel lint:*",
     "lint:editorconfig": "eclint check --block_comment_start '/**' --block_comment_end '*/'",
     "lint:eslint": "eslint --ext .js,.ts src"
@@ -36,7 +39,6 @@
     "eslint-plugin-import": "^2.19.1",
     "nodemon": "^2.0.2",
     "npm-run-all": "^4.1.5",
-    "pm2": "^4.2.1",
     "typescript": "^3.7.4"
   },
   "dependencies": {
@@ -47,6 +49,7 @@
     "change-case": "^3.1.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.0",
+    "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
     "deep-freeze": "0.0.1",
     "express": "^4.17.1",

@@ -47,6 +47,11 @@ async function initExpressAndRoutingController(): Promise<Application> {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
 
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    console.log(req.url);
+    next();
+  });
+
   // routing-controllers 集成 typedi
   useContainerRoutingControllers(Container);
 

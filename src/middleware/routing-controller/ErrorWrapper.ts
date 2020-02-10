@@ -8,7 +8,6 @@ import { ExpectedError } from '../../util/errors';
 export default class ErrorWrapper implements ExpressErrorMiddlewareInterface {
   error(error: any, request: Request, response: Response, next: (err?: any) => any) {
     if (typeof error === 'object' && error instanceof Error) {
-      console.log(error);
       const res: any = {
         success: false,
         info: error.message,

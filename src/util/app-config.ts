@@ -72,7 +72,7 @@ export class AppConfig {
    * @param file 配置文件前缀, eg: app.development.yml 文件的 file 为 app
    * @param env process.env.NODE_ENV 的值, 不传则默认取  默认为 process.env.NODE_ENV, 取不到时为 development
    */
-  constructor(containerInstance: ContainerInstance, relativeDirectory = '', file = 'app', env?: string) {
+  constructor(containerInstance: ContainerInstance, relativeDirectory = 'config', file = 'app', env?: string) {
     if (!appConfigSingletonInstance) {
       const envValue = env || process.env.NODE_ENV || 'development';
       const baseFilePath = path.resolve(process.cwd(), relativeDirectory, `${file}.base.yml`);

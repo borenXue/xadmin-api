@@ -3,7 +3,7 @@ drop database if exists `xadmin`;
 create database `xadmin` default charset utf8 collate utf8_general_ci;
 
 drop user IF EXISTS uxadmin@'localhost';
-create user 'uxadmin'@'localhost' identified by 'pxadmin';
+create user 'uxadmin'@'localhost' identified by 'pXadmin_110';
 grant all on `xadmin`.* TO 'uxadmin'@'localhost' with grant option;
 
 flush privileges;

@@ -1,5 +1,6 @@
 
 dist
+*.tar.gz
 
 # Created by https://www.gitignore.io/api/node,macos,webstorm,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,macos,webstorm,visualstudiocode
