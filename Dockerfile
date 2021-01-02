@@ -1,4 +1,4 @@
-FROM node:10
+FROM registry.cn-hangzhou.aliyuncs.com/xbr-devopts/node:10
 
 RUN npm config set registry https://registry.npm.taobao.org
 
