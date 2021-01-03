@@ -12,7 +12,6 @@ typeorm:
   options:
     type: mysql
     <<: *mysql
-    host: host.docker.internal
 
 express:
   authTokenCookie:
