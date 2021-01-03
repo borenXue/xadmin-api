@@ -1,8 +1,17 @@
 
 port: 8080
 
+mysql: &mysql
+  host: ip.xueboren.cn
+  port: 3306
+  username: uxadmin
+  password: pXadmin_110
+  database: xadmin
+
 typeorm:
   options:
+    type: mysql
+    <<: *mysql
     host: host.docker.internal
 
 express:
