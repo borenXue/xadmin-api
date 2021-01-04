@@ -77,7 +77,8 @@ export default class UserService {
       },
       where: {
         // TODO: is_delete 未生效
-        is_delete: 0, // eslint-disable-line @typescript-eslint/camelcase
+        // TODO: 测试环境 - aliyun-sae 中直接报错
+        // is_delete: 0, // eslint-disable-line @typescript-eslint/camelcase
         enable: 1,
         loginName,
         password: md5(password),
