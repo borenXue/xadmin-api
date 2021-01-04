@@ -1,6 +1,15 @@
 
+# 数据库
+mysql: &mysql
+  host: localhost
+  port: 3306
+  username: uxadmin
+  password: pXadmin_110
+  database: xadmin
+
 typeorm:
   options:
+    <<: *mysql
     logger: advanced-console
 
 # cache:

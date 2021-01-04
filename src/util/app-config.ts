@@ -28,6 +28,7 @@ export class AppConfig {
     core_user: string;
     core_ref_user_role: string;
     core_ref_role_right: string;
+    demo_user: string;
   }
 
   cache: {

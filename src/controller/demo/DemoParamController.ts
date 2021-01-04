@@ -22,12 +22,6 @@ class Person {
 
 @JsonController('demos/params')
 export default class DemoParamController {
-  @Get('/hello-world')
-  helloWorld() {
-    return {
-      val: 'hello world ~_~',
-    };
-  }
 
   @Get('/get-to-object')
   paramToObject(

@@ -1,3 +1,20 @@
+
+# 数据库
+mysql: &mysql
+  host: ip.xueboren.com
+  port: 3306
+  username: uxadmin
+  password: pXadmin_110
+  database: xadmin
+
+typeorm:
+  options:
+
+typeorm:
+  options:
+    <<: *mysql
+    logger: advanced-console
+
 express:
   authTokenCookie:
     httpOnly: true

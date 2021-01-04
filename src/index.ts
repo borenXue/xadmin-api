@@ -48,6 +48,14 @@ async function initExpressAndRoutingController(): Promise<Application> {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
 
+  // 设置跨域 - 允许全部跨域
+  app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization,'Origin',Accept,X-Requested-With");
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+  });
+
+
   app.use((req: Request, res: Response, next: NextFunction) => {
     console.log(req.url);
     next();

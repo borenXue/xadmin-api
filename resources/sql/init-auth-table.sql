@@ -7,6 +7,7 @@ drop table if exists `core_admin_refs_role_right`;
 drop table if exists `core_admin_role`;
 drop table if exists `core_admin_right_closure`;
 drop table if exists `core_admin_right`;
+drop table if exists `demo_user`;
 
 -- -------------------------------------------------------
 -- ------------------------  后台权限设计
@@ -128,7 +129,6 @@ default charset=utf8 collate=utf8_general_ci
 comment="用户角色关联表";
 
 
-
 -- 基础权限数据初始化
 insert into `core_admin_right` (name, code, url, type, `parent_id`, `sort_order`)
 values ('用户权限管理', 'auth_group', '/auth', 'page-dir', null, 0),
@@ -154,3 +154,11 @@ values ('系统管理员', 'system-admin'), ('最高级管理员', 'super-admin'
 
 insert into `core_admin_refs_user_role` (user_id, role_id)
 values (1, 1), (2, 1), (2, 2), (3, 2);
+
+
+create table `demo_user` (
+  `id` bigint unsigned primary key not null auto_increment,
+  `name` varchar(20) not null,
+  `nick_name` varchar(50) not null
+) engine=innodb auto_increment=1 default charset=utf8 collate=utf8_general_ci comment="测试表";
+insert into `demo_user` values(null, '小明', 'xiao ming'), (null, '小红', 'xiao hong');

@@ -1,19 +1,10 @@
 
 port: 10060
 
-# 数据库
-mysql: &mysql
-  host: localhost
-  port: 3306
-  username: uxadmin
-  password: pXadmin_110
-  database: xadmin
-
 # typeorm 初始化参数
 typeorm:
   options:
     type: mysql
-    <<: *mysql
     name: default
     logging: 'all' # 类型: boolean | "all" | ("query" | "schema" | "error" | "warn" | "info" | "log" | "migration")[]
     logger: 'simple-console' # "advanced-console" | "simple-console" | "file" | "debug" | Logger(不支持yml配置)
@@ -31,6 +22,7 @@ tables:
   core_user: core_admin_user
   core_ref_user_role: core_admin_refs_user_role
   core_ref_role_right: core_admin_refs_role_right
+  demo_user: demo_user
 
 cache:
   memory: # false | { max, ttl }
