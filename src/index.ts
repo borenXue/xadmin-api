@@ -114,7 +114,7 @@ async function startServer(): Promise<void> {
   });
 
   const { port } = config;
-  app.listen(+port, 'localhost');
+  app.listen(+port);
   // eslint-disable-next-line no-console
   console.warn(`Application server listening on ${port} ......`);
 }
