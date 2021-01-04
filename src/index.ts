@@ -45,10 +45,11 @@ async function initExpressAndRoutingController(): Promise<Application> {
   const app = express();
 
   // 设置跨域 - 允许全部跨域
-  app.all('*', function(req, res, next) {
+  app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization,'Origin',Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, OPTIONS, PUT, DELETE");
+    res.header('Allow', 'GET, POST, PATCH, OPTIONS, PUT, DELETE');
     next();
   });
 
