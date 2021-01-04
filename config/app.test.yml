@@ -2,7 +2,7 @@
 port: 8080
 
 mysql: &mysql
-  host: 172.16.3.118
+  host: ip.xueboren.cn
   port: 3306
   username: uxadmin
   password: pXadmin_110
