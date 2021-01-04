@@ -20,6 +20,7 @@ import entities from './entity/index';
 import controllers from './controller/index';
 import middlewares from './middleware/routing-controller/index';
 import interceptors from './interceptors/index';
+import getIPAddress from './util/ip';
 
 const config: AppConfig = Container.get(AppConfig);
 const appCache: AppCache = Container.get(AppCache);
@@ -120,3 +121,5 @@ async function startServer(): Promise<void> {
 }
 
 startServer();
+
+console.log('当前运行机器 ip 信息: ', getIPAddress())
