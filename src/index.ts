@@ -44,16 +44,17 @@ async function initTypeOrmAndMySql(): Promise<Connection> {
 async function initExpressAndRoutingController(): Promise<Application> {
   const app = express();
 
+  // 设置跨域 - 允许全部跨域
+  app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization,'Origin',Accept,X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    next();
+  });
+
   // 配置 express 中间件
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
-
-  // 设置跨域 - 允许全部跨域
-  app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization,'Origin',Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Origin", "*");
-    next();
-  });
 
 
   app.use((req: Request, res: Response, next: NextFunction) => {
