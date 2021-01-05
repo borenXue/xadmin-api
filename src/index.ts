@@ -47,9 +47,12 @@ async function initExpressAndRoutingController(): Promise<Application> {
   // 设置跨域 - 允许全部跨域
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization,'Origin',Accept,X-Requested-With");
+    // res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization,'Origin',Accept,X-Requested-With");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, OPTIONS, PUT, DELETE");
-    res.header('Allow', 'GET, POST, PATCH, OPTIONS, PUT, DELETE');
+    // res.header('Allow', 'GET, POST, PATCH, OPTIONS, PUT, DELETE');
+    res.header("X-Powered-By",' 3.2.1')
+    res.header("Content-Type", "application/json;charset=utf-8");
     next();
   });
 
