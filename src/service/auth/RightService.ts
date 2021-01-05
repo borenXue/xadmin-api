@@ -245,7 +245,6 @@ export default class RightService {
   async insertOne(entity: RightEntity, parentId?: number, previousSiblingId?: number) {
     return await this.conn.transaction(async (runInTransaction) => {
       const repo = runInTransaction.getRepository(RightEntity);
-      debugger; // eslint-disable-line
 
       // step 1: 设置 entity 的 parent 与 sortOrder
       if (parentId) entity.parent = new RightEntity(parentId);
