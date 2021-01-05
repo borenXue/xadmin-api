@@ -53,7 +53,11 @@ async function initExpressAndRoutingController(): Promise<Application> {
     // res.header('Allow', 'GET, POST, PATCH, OPTIONS, PUT, DELETE');
     res.header("X-Powered-By",' 3.2.1')
     res.header("Content-Type", "application/json;charset=utf-8");
-    next();
+    if (req.method === 'OPTIONS') {
+      res.sendStatus(200);
+    } else {
+      next();
+    }
   });
 
   // 配置 express 中间件
