@@ -7,7 +7,9 @@
 # App Secret：42ec14d530bc8dbb1a0e837eafbc1d79bbecbbe4
 
 # FROM registry.cn-hangzhou.aliyuncs.com/xbr-devopts/node:10
-FROM registry.cn-hangzhou.aliyuncs.com/aliyun-node/alinode:4.7.2
+
+# FROM registry.cn-hangzhou.aliyuncs.com/aliyun-node/alinode:4.7.2
+FROM registry-internal.cn-hangzhou.aliyuncs.com/aliyun-node/alinode
 # TODO: registry-vpc 为什么会加载失败
 # FROM registry-vpc.cn-hangzhou.aliyuncs.com/aliyun-node/alinode:4.7.2
 
