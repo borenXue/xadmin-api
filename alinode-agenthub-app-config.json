@@ -1,10 +1,5 @@
 {
   "server": "ip.xueboren.cn:8888",
-  "heartbeatInterval": 60,
-  "reconnectDelay": 10,
-  "reportInterval": 60,
   "error_log": [],
-  "appid": "87310",
-  "secret": "42ec14d530bc8dbb1a0e837eafbc1d79bbecbbe4",
-  "logdir": "/tmp"
+  "packages": ["/usr/src/app/package.json"]
 }
