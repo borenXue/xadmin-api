@@ -17,7 +17,7 @@ WORKDIR /usr/src/app
 
 # http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/
 COPY package*.json ./
-COPY agenthub-running.json /root/app-config.json
+COPY alinode-agenthub-app-config.json /root/app-config.json
 
 # 安装项目依赖包
 RUN npm install

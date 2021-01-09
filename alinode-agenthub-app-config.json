@@ -1,5 +1,5 @@
 {
-  "server": "ws://ip.xueboren.cn:8888",
+  "server": "ip.xueboren.cn:8888",
   "heartbeatInterval": 60,
   "reconnectDelay": 10,
   "reportInterval": 60,
